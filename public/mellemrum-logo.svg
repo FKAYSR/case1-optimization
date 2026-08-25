@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 100" role="img" aria-labelledby="title description">
+  <title id="title">Mellemrum</title>
+  <desc id="description">Ordmærket mellemrum med et limefarvet punktum</desc>
+  <rect width="390" height="100" fill="#173f35"/>
+  <g fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="800">
+    <text x="0" y="76" lengthAdjust="spacingAndGlyphs" textLength="345">mellemrum</text>
+  </g>
+  <circle cx="369" cy="69" r="8" fill="#d8ff62"/>
+</svg>
