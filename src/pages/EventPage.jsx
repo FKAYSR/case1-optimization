@@ -95,17 +95,22 @@ export default function EventPage() {
           </div>
 
           <form onSubmit={handleSubmit}>
-            <label>
+            <label htmlFor="signup-navn">
               Navn
               <input
+                id="signup-navn"
+                required
                 value={name}
                 onChange={(inputEvent) => setName(inputEvent.target.value)}
                 placeholder="dit kaldenavn"
               />
             </label>
-            <label>
+            <label htmlFor="signup-email">
               E-mail
               <input
+                id="signup-email"
+                type="email"
+                required
                 value={email}
                 onChange={(inputEvent) => setEmail(inputEvent.target.value)}
                 placeholder="dig@example.com"
