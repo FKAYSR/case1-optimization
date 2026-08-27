@@ -16,6 +16,7 @@ export default function EventPage() {
   const [email, setEmail] = useState("");
   const [showAnimation, setShowAnimation] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [submittedData, setSubmittedData] = useState("");
 
   useEffect(() => {
     async function getEvent() {
@@ -30,6 +31,8 @@ export default function EventPage() {
   async function handleSubmit(eventSubmit) {
     eventSubmit.preventDefault();
     console.log({ name, email, event: event.title });
+
+    setSubmittedData({ name, email})
 
     setName("");
     setEmail("");
@@ -104,50 +107,67 @@ export default function EventPage() {
         </section>
 
         <section className="signup-panel">
-          <div>
-            <p className="eyebrow dark">Tilmelding</p>
-            <h2>Reserver din plads</h2>
-            <p>
-              Udfyld formularen, så sender vi din tilmelding til arrangøren.
-            </p>
-          </div>
+          {submittedData ? (
+            // Bekræftigelse efter bruger har tilmeldt sig
+            <div className="signup-success-state">
+              <p className="eyebrow dark">Tilmeldt</p>
+              <h2>Mange tak, {submittedData.name}!</h2>
+              <p>
+                Vi har sendt en bekræftigelses mail til{" "}
+                <strong>{submittedData.email}</strong>.
+              </p>
 
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="signup-navn">
-              Navn
-              <input
-                id="signup-navn"
-                required
-                value={name}
-                onChange={(inputEvent) => setName(inputEvent.target.value)}
-                placeholder="dit kaldenavn"
-              />
-            </label>
-            <label htmlFor="signup-email">
-              E-mail
-              <input
-                id="signup-email"
-                type="email"
-                required
-                value={email}
-                onChange={(inputEvent) => setEmail(inputEvent.target.value)}
-                placeholder="dig@example.com"
-              />
-            </label>
-            <button type="submit">Tilmeld mig</button>
-          </form>
+              {/* Link til RegistrationsPage */}
+              <Link to="/tilmeldinger" className="back-link">
+                Se alle tilmeldinger →
+              </Link>
+            </div>
+          ) : (
+            // Tilmeldings formularens default
+            <div>
+              <p className="eyebrow dark">Tilmelding</p>
+              <h2>Reserver din plads</h2>
+              <p>
+                Udfyld formularen, så sender vi din tilmelding til arrangøren.
+              </p>
+            </div>
+          )}
+
+          <div>
+            {submittedData && <h3>Vil du tilføje en ven?</h3>}
+
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="signup-navn">
+                Navn
+                <input
+                  id="signup-navn"
+                  required
+                  value={name}
+                  onChange={(inputEvent) => setName(inputEvent.target.value)}
+                  placeholder="dit kaldenavn"
+                />
+              </label>
+              <label htmlFor="signup-email">
+                E-mail
+                <input
+                  id="signup-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(inputEvent) => setEmail(inputEvent.target.value)}
+                  placeholder="dig@example.com"
+                />
+              </label>
+              <button type="submit">Tilmeld mig</button>
+            </form>
+          </div>
         </section>
       </main>
 
       {showAnimation && (
         <div className={`lottie-overlay ${isClosing ? "is-closing" : ""}`}>
           <div>
-            <Lottie
-              src={successAni}
-              autoplay
-              loop={false}
-              aria-hidden="true"
-            />
+            <Lottie src={successAni} autoplay loop={false} aria-hidden="true" />
           </div>
           <p>Du er tilmeldt!</p>
         </div>
