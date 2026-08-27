@@ -896,3 +896,58 @@ select:focus {
     gap: 0.4rem;
   }
 }
+
+.lottie-overlay {
+  padding: 1.5rem;
+  align-items: center;
+  background: rgba(23, 63, 53, 0.96);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  animation: overlay-fade-in 300ms ease-out both;
+}
+
+.lottie-overlay.is-closing {
+  animation: overlay-fade-out 300ms ease-in both;
+}
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.lottie-overlay p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.lottie-animation {
+  height: 320px;
+  width: 320px;
+}
+
+.lottie-animation svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

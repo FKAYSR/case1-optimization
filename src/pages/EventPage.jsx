@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
+import { Lottie } from "lottie-react";
+import successAni from "../assets/animations/check-animation.json"
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
@@ -12,6 +14,8 @@ export default function EventPage() {
   const [event, setEvent] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     async function getEvent() {
@@ -26,6 +30,17 @@ export default function EventPage() {
   async function handleSubmit(eventSubmit) {
     eventSubmit.preventDefault();
     console.log({ name, email, event: event.title });
+
+    setShowAnimation(true);
+
+    setTimeout(() => {
+      setIsClosing(true);
+
+      setTimeout(() => {
+        setShowAnimation(false);
+        setIsClosing(false);
+      }, 300);
+    }, 1600);
   }
 
   if (!event) {
@@ -120,6 +135,21 @@ export default function EventPage() {
           </form>
         </section>
       </main>
+
+      {showAnimation && (
+        <div className={`lottie-overlay ${isClosing ? "is-closing" : ""}`}>
+          <div>
+            <Lottie
+              src={successAni}
+              autoplay
+              loop={false}
+              aria-hidden="true"
+            />
+          </div>
+          <p>Du er tilmeldt!</p>
+        </div>
+      )}
+
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-intro">
