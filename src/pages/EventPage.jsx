@@ -31,6 +31,9 @@ export default function EventPage() {
     eventSubmit.preventDefault();
     console.log({ name, email, event: event.title });
 
+    setName("");
+    setEmail("");
+
     setShowAnimation(true);
 
     setTimeout(() => {
