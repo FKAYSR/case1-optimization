@@ -99,6 +99,7 @@ export default function EventPage() {
               Navn
               <input
                 id="signup-navn"
+                required
                 value={name}
                 onChange={(inputEvent) => setName(inputEvent.target.value)}
                 placeholder="dit kaldenavn"
