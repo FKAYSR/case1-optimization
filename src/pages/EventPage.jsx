@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { Lottie } from "lottie-react";
-import successAni from "../assets/animations/check-animation.json"
+import successAni from "../assets/animations/check-animation.json";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
   apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
 };
 
 export default function EventPage() {
@@ -17,10 +17,14 @@ export default function EventPage() {
   const [showAnimation, setShowAnimation] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [submittedData, setSubmittedData] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     async function getEvent() {
-      const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}`, { headers });
+      const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}`, {
+        headers,
+      });
       const data = await response.json();
       setEvent(data[0]);
     }
@@ -30,23 +34,49 @@ export default function EventPage() {
 
   async function handleSubmit(eventSubmit) {
     eventSubmit.preventDefault();
-    console.log({ name, email, event: event.title });
+    setIsSubmitting(true);
+    setSubmitError("");
 
-    setSubmittedData({ name, email})
+    try {
+      const response = await fetch(`${SUPABASE_URL}/registrations`, {
+        method: "POST",
+        headers: {
+          ...headers,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          status: "Ny",
+          eventTitle: event.title,
+          eventDate: event.date,
+          eventLocation: event.venueName,
+        }),
+      });
 
-    setName("");
-    setEmail("");
+      if (!response.ok) {
+        throw new Error("Registration failed");
+      }
 
-    setShowAnimation(true);
+      setSubmittedData({ name, email });
+      setName("");
+      setEmail("");
 
-    setTimeout(() => {
-      setIsClosing(true);
+      setShowAnimation(true);
 
       setTimeout(() => {
-        setShowAnimation(false);
-        setIsClosing(false);
-      }, 300);
-    }, 1600);
+        setIsClosing(true);
+
+        setTimeout(() => {
+          setShowAnimation(false);
+          setIsClosing(false);
+        }, 300);
+      }, 1600);
+    } catch {
+      setSubmitError("Tilmeldingen kunne ikke gemmes. Prøv igen.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (!event) {
@@ -158,7 +188,10 @@ export default function EventPage() {
                   placeholder="dig@example.com"
                 />
               </label>
-              <button type="submit">Tilmeld mig</button>
+              {submitError && <p role="alert">{submitError}</p>}
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Gemmer..." : "Tilmeld mig"}
+              </button>
             </form>
           </div>
         </section>
