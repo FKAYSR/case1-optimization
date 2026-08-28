@@ -66,7 +66,6 @@ export default function RegistrationsPage() {
             <div className="registration-row" key={registration.id}>
               <div>
                 <strong>{registration.name}</strong>
-                <small>{registration.email}</small>
               </div>
               <span>{registration.eventTitle}</span>
               <span>
