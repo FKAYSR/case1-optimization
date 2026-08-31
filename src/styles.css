@@ -225,6 +225,7 @@ select:focus {
   min-height: 100%;
   overflow: hidden;
   transition: box-shadow 180ms ease, transform 180ms ease;
+  text-decoration: none;
 }
 
 .event-card:hover {
