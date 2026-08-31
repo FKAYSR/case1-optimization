@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
@@ -67,7 +68,14 @@ export default function RegistrationsPage() {
               <div>
                 <strong>{registration.name}</strong>
               </div>
-              <span>{registration.eventTitle}</span>
+              <span>
+                <Link
+                  to={`/events/${encodeURIComponent(registration.eventTitle.toLowerCase().trim().replace(/\s+/g, "-"))}`}
+                  className="event-title-link"
+                >
+                  {registration.eventTitle}
+                </Link>
+              </span>
               <span>
                 {new Date(registration.eventDate).toLocaleDateString("da-DK")}
               </span>
