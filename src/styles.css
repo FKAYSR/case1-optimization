@@ -737,6 +737,24 @@ select:focus {
   text-transform: uppercase;
 }
 
+.event-title-link {
+  align-self: flex-start;
+  background: var(--green);
+  border-radius: 999px;
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 750;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.event-title-link:hover {
+  background: var(--lime);
+  color: var(--green);
+}
+
 .status {
   background: #dff3cc;
   border-radius: 999px;
