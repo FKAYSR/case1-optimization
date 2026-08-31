@@ -637,6 +637,15 @@ select:focus {
   background-color: #3b5ce1;
 }
 
+.no-payment-info {
+  font-size: 0.85rem;
+  color: #666;
+  background-color: #eee;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
 .signup-panel {
   background: var(--lime);
   border-radius: 18px;

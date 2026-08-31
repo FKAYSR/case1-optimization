@@ -138,18 +138,25 @@ export default function EventPage() {
                   "Gratis"
                 ) : (
                   <span className="event-price">
-                    {" "}
                     <span>{event.price} kr.</span>
-                    <a
-                      href="https://mobilepay.dk/box?phone=1234AB" // ✏️ Erstat med dit MobilePay Box-link eller nummer
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mobilepay-link"
-                      title="Betal med MobilePay"
-                    >
-                      <img src={mobilepay} alt="Mobilepay" />
-                      Betal med MobilePay
-                    </a>
+
+                    {event.mobilepayLink ? (
+                      <a
+                        href={event.mobilepayLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mobilepay-link"
+                        title="Betal med MobilePay"
+                      >
+                        <img src={mobilepay} alt="Mobilepay" />
+                        <span>Betal med MobilePay</span>
+                      </a>
+                    ) : (
+                      <span className="no-payment-info">
+                        Betales ved indgangen
+                      </span>
+                    )}
+                    <a href="mailto:hej@eventholder.dk">Kontak arrangøren</a>
                   </span>
                 )}
               </p>
