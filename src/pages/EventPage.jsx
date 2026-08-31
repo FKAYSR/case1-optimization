@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { Lottie } from "lottie-react";
 import successAni from "../assets/animations/check-animation.json";
+import mobilepay from "../assets/images/mobilepay-icon.svg"
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
@@ -133,7 +134,24 @@ export default function EventPage() {
               </p>
               <p>
                 <strong>Pris</strong>
-                {event.price === 0 ? "Gratis" : `${event.price} kr.`}
+                {event.price === 0 ? (
+                  "Gratis"
+                ) : (
+                  <span className="event-price">
+                    {" "}
+                    <span>{event.price} kr.</span>
+                    <a
+                      href="https://mobilepay.dk/box?phone=1234AB" // ✏️ Erstat med dit MobilePay Box-link eller nummer
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mobilepay-link"
+                      title="Betal med MobilePay"
+                    >
+                      <img src={mobilepay} alt="Mobilepay" />
+                      Betal med MobilePay
+                    </a>
+                  </span>
+                )}
               </p>
             </div>
             <p>{event.description}</p>
