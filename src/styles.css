@@ -603,6 +603,49 @@ select:focus {
   grid-template-columns: 5rem 1fr;
 }
 
+.event-price {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .event-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.mobilepay-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #5a78ff;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.mobilepay-link:hover {
+  background-color: #3b5ce1;
+}
+
+.no-payment-info {
+  font-size: 0.85rem;
+  color: #666;
+  background-color: #eee;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
 .signup-panel {
   background: var(--lime);
   border-radius: 18px;
