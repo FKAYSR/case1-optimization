@@ -10,7 +10,7 @@ const headers = {
 };
 
 export default function EventPage() {
-  const { eventId } = useParams();
+  const { eventTitle } = useParams();
   const [event, setEvent] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,15 +22,19 @@ export default function EventPage() {
 
   useEffect(() => {
     async function getEvent() {
-      const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}`, {
-        headers,
-      });
+      const cleanTitle = decodeURIComponent(eventTitle).replaceAll("-", " ");
+
+      const response = await fetch(
+      `${SUPABASE_URL}/events?title=ilike.${encodeURIComponent(cleanTitle)}`,
+      { headers }
+      );
+      
       const data = await response.json();
       setEvent(data[0]);
     }
 
     getEvent();
-  }, [eventId]);
+  }, [eventTitle]);
 
   async function handleSubmit(eventSubmit) {
     eventSubmit.preventDefault();
