@@ -16,7 +16,7 @@ export default function RegistrationsPage() {
     async function getRegistrations() {
       try {
         const response = await fetch(
-          `${SUPABASE_URL}/registrations?order=createdAt.desc`,
+          `${SUPABASE_URL}/registrations?select=*,events(*)&order=createdAt.desc`,
           { headers },
         );
 
@@ -70,14 +70,14 @@ export default function RegistrationsPage() {
               </div>
               <span>
                 <Link
-                  to={`/events/${encodeURIComponent(registration.eventTitle.toLowerCase().trim().replace(/\s+/g, "-"))}`}
+                  to={`/events/${encodeURIComponent(registration.events?.title.toLowerCase().trim().replace(/\s+/g, "-"))}`}
                   className="event-title-link"
                 >
-                  {registration.eventTitle}
+                  {registration.events?.title}
                 </Link>
               </span>
               <span>
-                {new Date(registration.eventDate).toLocaleDateString("da-DK")}
+                {new Date(registration.events?.date).toLocaleDateString("da-DK")}
               </span>
               <span className="status">{registration.status}</span>
             </div>
