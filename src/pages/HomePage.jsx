@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import EventCard from "../components/EventCard"
+import "./HomePage.css";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {

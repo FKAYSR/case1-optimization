@@ -27,6 +27,12 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  margin: 0 auto;
+  max-width: calc(var(--content-width) + 2 * var(--page-gutter));
+  padding: clamp(3rem, 6vw, 6rem) var(--page-gutter);
+}
+
 body {
   line-height: 1.5;
   margin: 0;
@@ -42,111 +48,6 @@ button,
 input,
 select {
   font: inherit;
-}
-
-.hero {
-  background:
-    linear-gradient(90deg, rgba(12, 42, 34, 0.92) 0%, rgba(12, 42, 34, 0.7) 52%, rgba(12, 42, 34, 0.28) 100%),
-    url("https://images.unsplash.com/photo-1595146463222-19603449c6af?q=80&w=3872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center / cover;
-  color: white;
-  min-height: 64vh;
-  padding: clamp(5rem, 10vw, 9rem) var(--content-edge) 5rem;
-}
-
-.eyebrow {
-  color: var(--lime);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  margin: 0 0 1rem;
-  text-transform: uppercase;
-}
-
-.eyebrow-dark {
-  color: var(--green);
-}
-
-.hero h1,
-.page-header h1 {
-  font-size: clamp(3.2rem, 8vw, 7.5rem);
-  letter-spacing: -0.075em;
-  line-height: 0.9;
-  margin: 0;
-  max-width: 12ch;
-}
-
-.hero-copy {
-  color: rgba(255, 255, 255, 0.76);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: 1.55;
-  margin: 2rem 0;
-  max-width: 36rem;
-}
-
-.hero-link {
-  background: var(--lime);
-  border-radius: 999px;
-  color: var(--green);
-  display: inline-block;
-  font-weight: 700;
-  padding: 0.75rem 1.1rem;
-  text-decoration: none;
-  transition: transform 160ms ease;
-}
-
-.hero-link:hover {
-  transform: translateY(-2px);
-}
-
-main {
-  margin: 0 auto;
-  max-width: calc(var(--content-width) + 2 * var(--page-gutter));
-  padding: clamp(3rem, 6vw, 6rem) var(--page-gutter);
-}
-
-.section-heading {
-  align-items: end;
-  display: flex;
-  gap: 3rem;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-}
-
-/* Homepage + Eventpage? */
-.section-heading h2,
-.signup-panel h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  letter-spacing: -0.055em;
-  line-height: 1;
-  margin: 0;
-}
-
-.section-heading > p {
-  color: #53605b;
-  margin: 0;
-  max-width: 30rem;
-}
-
-.filters {
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 1fr;
-  margin-bottom: 2.5rem;
-  padding: 1rem;
-}
-
-/* Homepage + Eventpage? */
-.filters label,
-.signup-panel label {
-  display: grid;
-  font-size: 0.78rem;
-  font-weight: 800;
-  gap: 0.45rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 input,
@@ -167,10 +68,66 @@ select:focus {
   outline: none;
 }
 
-.event-grid {
+.eyebrow {
+  color: var(--lime);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.eyebrow-dark {
+  color: var(--green);
+}
+
+/* Not found paage */
+.not-found-title {
+  font-size: 5rem;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.not-found-link {
+  background: var(--green);
+  color: white;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+/* Mixed tbd */
+/* Home + AboutPage? */
+.hero h1,
+.page-header h1 {
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  letter-spacing: -0.075em;
+  line-height: 0.9;
+  margin: 0;
+  max-width: 12ch;
+}
+
+/* Homepage + Eventpage? */
+.section-heading h2,
+.signup-panel h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  letter-spacing: -0.055em;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Homepage + Eventpage? */
+.filters label,
+.signup-panel label {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 0.45rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* EventCard + Page? */
@@ -197,43 +154,14 @@ select:focus {
   font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
 }
 
-/* Not found paage */
-.not-found-title {
-  font-size: 5rem;
-}
 
-.not-found {
-  text-align: center;
-}
-
-.not-found-link {
-  background: var(--green);
-  color: white;
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-}
-
-
-/* Responsiveness */
-@media (max-width: 900px) {
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
+/* Responsiveness tbd */
 @media (max-width: 620px) {
+  /* Navbar + HomePage? */
   .site-nav,
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .site-nav {
-    gap: 0.7rem;
-    padding-bottom: 0.9rem;
-    padding-top: 0.9rem;
   }
 
   /* Mix? */
