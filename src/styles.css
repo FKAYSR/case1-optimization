@@ -42,52 +42,6 @@ select {
   font: inherit;
 }
 
-.site-nav {
-  align-items: center;
-  background: var(--green);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 28px rgba(12, 42, 34, 0.12);
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  min-height: 80px;
-  padding: 0 var(--content-edge);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.brand {
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-decoration: none;
-}
-
-.brand span {
-  color: var(--lime);
-}
-
-.nav-links {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.nav-links a {
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.92rem;
-  padding: 0.55rem 0.85rem;
-  text-decoration: none;
-  transition: background 160ms ease, color 160ms ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
 .hero {
   background:
     linear-gradient(90deg, rgba(12, 42, 34, 0.92) 0%, rgba(12, 42, 34, 0.7) 52%, rgba(12, 42, 34, 0.28) 100%),
