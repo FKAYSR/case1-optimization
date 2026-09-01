@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./EventCard.css";
 
 function formatEventDate(eventDate) {
   const date = new Date(eventDate);
@@ -12,7 +13,6 @@ function formatEventDate(eventDate) {
 }
 
 export default function EventCard( {event} ) {
-  console.log(event);
   const eventSlug = encodeURIComponent(event.title.toLowerCase().trim().replace(/\s+/g, "-"));
 
     return (

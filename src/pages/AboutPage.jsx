@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./AboutPage.css";
 
 export default function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
       <main className="about-page">
         <section className="about-intro" aria-labelledby="about-intro-title">
           <div>
-            <p className="eyebrow dark">Idéen</p>
+            <p className="eyebrow-dark">Idéen</p>
             <h2 id="about-intro-title">En enkel vej til det, der sker tæt på.</h2>
           </div>
           <div className="about-intro-copy">
@@ -51,7 +52,7 @@ export default function AboutPage() {
 
         <section className="about-flow-section" aria-labelledby="about-flow-title">
           <div className="about-section-heading">
-            <p className="eyebrow dark">Sådan hænger det sammen</p>
+            <p className="eyebrow-dark">Sådan hænger det sammen</p>
             <h2 id="about-flow-title">Fra idé til plads i kalenderen.</h2>
           </div>
           <ol className="about-flow-list">
@@ -82,7 +83,7 @@ export default function AboutPage() {
             <figcaption>Byrum, arkitektur og nye perspektiver.</figcaption>
           </figure>
           <div>
-            <p className="eyebrow dark">Aarhus tæt på</p>
+            <p className="eyebrow-dark">Aarhus tæt på</p>
             <h2 id="about-city-title">Find plads til noget nyt.</h2>
             <p>Mellemrum peger på steder, idéer og fællesskaber på tværs af byen — fra små scener til store tanker.</p>
             <Link className="about-cta" to="/">

@@ -1,11 +1,12 @@
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
     <nav className="site-nav">
-      <NavLink className="brand" to="/">
+      <Link className="brand" to="/">
         mellemrum<span>.</span>
-      </NavLink>
+      </Link>
       <div className="nav-links">
         <NavLink to="/">Events</NavLink>
         <NavLink to="tilmeldinger">Se tilmeldinger</NavLink>
