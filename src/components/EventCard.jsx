@@ -12,6 +12,7 @@ function formatEventDate(eventDate) {
 }
 
 export default function EventCard( {event} ) {
+  console.log(event);
   const eventSlug = encodeURIComponent(event.title.toLowerCase().trim().replace(/\s+/g, "-"));
 
     return (
@@ -23,7 +24,7 @@ export default function EventCard( {event} ) {
     <p>{event.summary}</p>
     <div className="event-meta">
       <span>{formatEventDate(event.date)}</span>
-      <span>{event.venueName}</span>
+      <span>{event.venues?.name}</span>
     </div>
     <Link className="card-link" to={`/events/${eventSlug}`}>
       Læs mere

@@ -26,7 +26,7 @@ export default function EventPage() {
       const cleanTitle = decodeURIComponent(eventTitle).replaceAll("-", " ");
 
       const response = await fetch(
-      `${SUPABASE_URL}/events?title=ilike.${encodeURIComponent(cleanTitle)}`,
+      `${SUPABASE_URL}/events?select=*,venues(*)&title=ilike.${encodeURIComponent(cleanTitle)}`,
       { headers }
       );
       
@@ -52,10 +52,10 @@ export default function EventPage() {
         body: JSON.stringify({
           name,
           email,
-          status: "Ny",
+          status: "Tilmeldt",
           eventTitle: event.title,
           eventDate: event.date,
-          eventLocation: event.venueName,
+          eventLocation: event.venues?.name
         }),
       });
 
@@ -120,14 +120,14 @@ export default function EventPage() {
               <p>
                 <strong>Sted</strong>
                 <span>
-                  {event.venueName}
+                  {event.venues?.name}
                   <br />
-                  {event.venueAddress}, {event.venuePostalCode}{" "}
-                  {event.venueCity}
-                  {event.venueWebsite && (
+                  {event.venues?.address}, {event.venues?.postalCode}{" "}
+                  {event.venues?.city}
+                  {event.venues?.website && (
                     <>
                       <br />
-                      <a href={event.venueWebsite}>Besøg venue</a>
+                      <a href={event.venues?.website}>Besøg venue</a>
                     </>
                   )}
                 </span>
@@ -176,7 +176,6 @@ export default function EventPage() {
                 <strong>{submittedData.email}</strong>.
               </p>
 
-              {/* Link til RegistrationsPage */}
               <Link to="/tilmeldinger" className="back-link">
                 Se alle tilmeldinger →
               </Link>

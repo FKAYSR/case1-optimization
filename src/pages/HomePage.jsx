@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     async function getEvents() {
-      const response = await fetch(`${SUPABASE_URL}/events?order=date.asc`, { headers });
+      const response = await fetch(`${SUPABASE_URL}/events?select=*,venues(*)&order=date.asc`, { headers });
       const data = await response.json();
       setEvents(data);
     }
