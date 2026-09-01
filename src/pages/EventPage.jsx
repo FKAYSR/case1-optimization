@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router";
 import { Lottie } from "lottie-react";
 import successAni from "../assets/animations/check-animation.json";
 import mobilepay from "../assets/images/mobilepay-icon.svg"
+import "./EventPage.css"
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
@@ -52,7 +53,7 @@ export default function EventPage() {
         body: JSON.stringify({
           name,
           email,
-          status: "Tilmeldt",
+          status: "Tilmeldt✅",
           eventId: event.id,
         }),
       });
@@ -143,7 +144,7 @@ export default function EventPage() {
           {submittedData ? (
             // Bekræftigelse efter bruger har tilmeldt sig
             <div className="signup-success-state">
-              <p className="eyebrow dark">Tilmeldt</p>
+              <p className="eyebrow-dark">Tilmeldt</p>
               <h2>Mange tak, {submittedData.name}!</h2>
               <p>
                 Vi har sendt en bekræftigelses mail til{" "}
@@ -157,7 +158,7 @@ export default function EventPage() {
           ) : (
             // Tilmeldings formularens default
             <div>
-              <p className="eyebrow dark">Tilmelding</p>
+              <p className="eyebrow-dark">Tilmelding</p>
               <h2>Reserver din plads</h2>
               <p>
                 Udfyld formularen, så sender vi din tilmelding til arrangøren.
