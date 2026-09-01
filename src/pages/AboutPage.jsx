@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./AboutPage.css";
 
 export default function AboutPage() {
   return (
