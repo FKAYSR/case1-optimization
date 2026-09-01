@@ -191,6 +191,33 @@ main {
   text-transform: uppercase;
 }
 
+.submit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.submit-actions button,
+.submit-actions .mobilepay-link,
+.submit-actions .no-payment-info {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.submit-actions button{
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.submit-actions button:hover {
+  background-color: var(--ink);
+}
+
 input,
 select {
   background: white;
