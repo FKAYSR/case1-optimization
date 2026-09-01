@@ -134,31 +134,7 @@ export default function EventPage() {
               </p>
               <p>
                 <strong>Pris</strong>
-                {event.price === 0 ? (
-                  "Gratis"
-                ) : (
-                  <span className="event-price">
-                    <span>{event.price} kr.</span>
-
-                    {event.mobilepayLink ? (
-                      <a
-                        href={event.mobilepayLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mobilepay-link"
-                        title="Betal med MobilePay"
-                      >
-                        <img src={mobilepay} alt="Mobilepay" />
-                        <span>Betal med MobilePay</span>
-                      </a>
-                    ) : (
-                      <span className="no-payment-info">
-                        Betales ved indgangen
-                      </span>
-                    )}
-                    <a href="mailto:hej@eventholder.dk">Kontak arrangøren</a>
-                  </span>
-                )}
+                {event.price === 0 ? "Gratis" : `${event.price} kr.`}
               </p>
             </div>
             <p>{event.description}</p>
@@ -217,9 +193,33 @@ export default function EventPage() {
                 />
               </label>
               {submitError && <p role="alert">{submitError}</p>}
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Gemmer..." : "Tilmeld mig"}
-              </button>
+
+              <div className="submit-actions">
+                <button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Gemmer..." : "Tilmeld mig"}
+                </button>
+
+                {event.price > 0 && (
+                  <>
+                    {event.mobilepayLink ? (
+                      <a
+                        href={event.mobilepayLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mobilepay-link"
+                        title="Betal med MobilePay"
+                      >
+                        <img src={mobilepay} alt="Mobilepay" />
+                        <span>Betal med MobilePay</span>
+                      </a>
+                    ) : (
+                      <span className="no-payment-info">
+                        Betales ved indgangen
+                      </span>
+                    )}
+                  </>
+                )}
+              </div>
             </form>
           </div>
         </section>
