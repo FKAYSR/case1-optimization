@@ -42,3 +42,11 @@
   background: rgba(255, 255, 255, 0.1);
   color: white;
 }
+
+@media (max-width: 620px) {
+   .site-nav {
+    gap: 0.7rem;
+    padding-bottom: 0.9rem;
+    padding-top: 0.9rem;
+  }
+}

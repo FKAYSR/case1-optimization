@@ -99,8 +99,7 @@ select:focus {
   text-decoration: none;
 }
 
-/* Mixed tbd */
-/* Home + AboutPage? */
+/* Homepage + Aboutpage */
 .hero h1,
 .page-header h1 {
   font-size: clamp(3.2rem, 8vw, 7.5rem);
@@ -110,7 +109,7 @@ select:focus {
   max-width: 12ch;
 }
 
-/* Homepage + Eventpage? */
+/* Homepage + Eventpage */
 .section-heading h2,
 .signup-panel h2 {
   font-size: clamp(2.2rem, 4vw, 4rem);
@@ -119,7 +118,7 @@ select:focus {
   margin: 0;
 }
 
-/* Homepage + Eventpage? */
+/* Homepage + Eventpage */
 .filters label,
 .signup-panel label {
   display: grid;
@@ -130,7 +129,7 @@ select:focus {
   text-transform: uppercase;
 }
 
-/* EventCard + Page? */
+/* EventCard + Page */
 .event-category {
   color: #a5412c;
   font-size: 0.72rem;
@@ -140,7 +139,7 @@ select:focus {
   text-transform: uppercase;
 }
 
-/* About + RegistrationsPage? */
+/* About + Registrationspage */
 .page-header,
 .admin-header {
   background: var(--green);
@@ -148,23 +147,22 @@ select:focus {
   padding: 5rem var(--content-edge);
 }
 
-/* About + EventPage? */
+/* About + Eventpage */
 .lead {
   color: var(--ink) !important;
   font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
 }
 
 
-/* Responsiveness tbd */
+/* Responsiveness */
 @media (max-width: 620px) {
-  /* Navbar + HomePage? */
+  /* Navbar + HomePage */
   .site-nav,
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  /* Mix? */
   .event-grid,
   .filters,
   .about-audience-split,

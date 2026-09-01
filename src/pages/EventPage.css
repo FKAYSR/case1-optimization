@@ -113,12 +113,6 @@
   opacity: 0.65;
 }
 
-.form-message {
-  background: rgba(255, 255, 255, 0.55);
-  margin: 0.5rem 0 0;
-  padding: 0.8rem;
-}
-
 .submit-actions {
   display: flex;
   flex-direction: column;
@@ -147,6 +141,10 @@
 }
 
 @media (max-width: 900px) {
+    .event-detail > img {
+    min-height: 380px;
+  }
+
     .event-detail,
     .signup-panel {
     grid-template-columns: 1fr;
