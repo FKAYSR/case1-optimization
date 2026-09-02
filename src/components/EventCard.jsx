@@ -16,20 +16,26 @@ export default function EventCard( {event} ) {
   const eventSlug = encodeURIComponent(event.title.toLowerCase().trim().replace(/\s+/g, "-"));
 
     return (
-<div className="event-card" key={event.title}>
+<article className="event-card" key={event.title}>
   <img src={event.image} alt="" />
   <div className="event-card-content">
     <p className="event-category">{event.category}</p>
     <h3>{event.title}</h3>
     <p>{event.summary}</p>
-    <div className="event-meta">
-      <span>{formatEventDate(event.date)}</span>
-      <span>{event.venues?.name}</span>
-    </div>
-    <Link className="card-link" to={`/events/${eventSlug}`}>
+    <dl className="event-meta">
+      <div>
+        <dt>Dato</dt>
+        <dd>{formatEventDate(event.date)}</dd>
+      </div>
+      <div>
+        <dt>Sted</dt>
+        <dd>{event.venues?.name || "Sted ikke oplyst"}</dd>
+      </div>
+    </dl>
+    <Link className="card-link" to={`/events/${eventSlug}`} aria-label={`Læs mere om ${event.title}`}>
       Læs mere
     </Link>
   </div>
-</div>
+</article>
 );
 }

@@ -36,13 +36,13 @@ export default function AboutPage() {
           </div>
           <div className="about-audience-split">
             <article>
-              <span>Primær målgruppe</span>
+              <p className="audience-label">Primær målgruppe</p>
               <h3>For dig, der vil opdage byen</h3>
               <p>Find lokale oplevelser, få det vigtigste overblik, og tilmeld dig uden unødige omveje.</p>
               <Link to="/">Udforsk kommende events →</Link>
             </article>
             <article>
-              <span>For arrangører</span>
+              <p className="audience-label">For arrangører</p>
               <h3>Gør oplevelsen synlig</h3>
               <p>Del events med et nysgerrigt publikum, og få overblik over de mennesker, der tilmelder sig.</p>
               <a href="mailto:hej@mellemrum.dk">Tal med os om et event →</a>
@@ -57,18 +57,18 @@ export default function AboutPage() {
           </div>
           <ol className="about-flow-list">
             <li>
-              <span>01</span>
-              <strong>Arrangører deler events</strong>
+              <span aria-hidden="true">01</span>
+              <h3>Arrangører deler events</h3>
               <p>Oplevelsen får en tydelig plads på platformen.</p>
             </li>
             <li>
-              <span>02</span>
-              <strong>Brugere opdager</strong>
+              <span aria-hidden="true">02</span>
+              <h3>Brugere opdager</h3>
               <p>Søgning, kategorier og kuratering gør det lettere at vælge.</p>
             </li>
             <li>
-              <span>03</span>
-              <strong>Brugere tilmelder sig</strong>
+              <span aria-hidden="true">03</span>
+              <h3>Brugere tilmelder sig</h3>
               <p>Fra interesse til tilmelding i ét sammenhængende flow.</p>
             </li>
           </ol>

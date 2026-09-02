@@ -13,6 +13,11 @@
   overflow: hidden;
 }
 
+.registration-list table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
 .registration-row {
   align-items: center;
   border-bottom: 1px solid var(--line);
@@ -22,8 +27,19 @@
   padding: 1rem 1.2rem;
 }
 
-.registration-row:last-child {
+.registration-row:last-child th,
+.registration-row:last-child td {
   border-bottom: 0;
+}
+
+.registration-row th,
+.registration-row td {
+  font-weight: 400;
+  text-align: left;
+}
+
+.registration-row th[scope="row"] {
+  font-weight: 700;
 }
 
 .registration-row strong,
@@ -42,6 +58,22 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.registration-labels th {
+  font-weight: 800;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .event-title-link {
@@ -73,11 +105,39 @@
 }
 
 @media (max-width: 620px) {
-  .registration-row {
-    grid-template-columns: 1fr;
+  .registration-list table,
+  .registration-list tbody,
+  .registration-list tr,
+  .registration-list td,
+  .registration-list th {
+    display: block;
   }
 
-  .registration-labels {
+  .registration-list thead {
     display: none;
+  }
+
+  .registration-row {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+  }
+
+  .registration-row td,
+  .registration-row th[scope="row"] {
+    border: 0;
+    padding: 0.25rem 0 0.25rem 5rem;
+    position: relative;
+  }
+
+  .registration-row td::before,
+  .registration-row th[scope="row"]::before {
+    color: #65706c;
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 800;
+    left: 0;
+    letter-spacing: 0.08em;
+    position: absolute;
+    text-transform: uppercase;
   }
 }

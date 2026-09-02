@@ -8,6 +8,10 @@
   margin: 0.35rem 0;
 }
 
+.site-footer h2 {
+  margin: 0.35rem 0;
+}
+
 .footer-top {
   align-items: start;
   display: grid;

@@ -101,7 +101,7 @@
   color: var(--green);
 }
 
-.about-audience-split span,
+.about-audience-split .audience-label,
 .about-flow-list span {
   font-size: 0.75rem;
   font-weight: 850;
@@ -109,11 +109,15 @@
   text-transform: uppercase;
 }
 
-.about-audience-split article:first-child span {
+.about-audience-split .audience-label {
+  margin: 0 0 1.25rem;
+}
+
+.about-audience-split article:first-child .audience-label {
   color: var(--lime);
 }
 
-.about-audience-split article:last-child span {
+.about-audience-split article:last-child .audience-label {
   color: #355048;
 }
 
@@ -122,7 +126,7 @@
   max-width: 12ch;
 }
 
-.about-audience-split p {
+.about-audience-split article > p:not(.audience-label) {
   color: inherit;
   margin: 1.25rem 0;
   max-width: 32rem;
@@ -174,7 +178,8 @@
   margin-bottom: 3.5rem;
 }
 
-.about-flow-list strong {
+.about-flow-list h3 {
+  font-weight: 700;
   display: block;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   letter-spacing: -0.035em;
