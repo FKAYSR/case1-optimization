@@ -53,31 +53,44 @@ export default function RegistrationsPage() {
       <main>
         {error && <p role="alert">{error}</p>}
         <div className="registration-list">
-          <div className="registration-row registration-labels">
-            <span>Navn</span>
-            <span>Event</span>
-            <span>Dato</span>
-            <span>Status</span>
-          </div>
-          {registrations.map((registration) => (
-            <div className="registration-row" key={registration.id}>
-              <div>
-                <strong>{registration.name}</strong>
-              </div>
-              <span>
-                <Link
-                  to={`/events/${encodeURIComponent(registration.events?.title.toLowerCase().trim().replace(/\s+/g, "-"))}`}
-                  className="event-title-link"
-                >
-                  {registration.events?.title}
-                </Link>
-              </span>
-              <span>
-                {new Date(registration.events?.date).toLocaleDateString("da-DK")}
-              </span>
-              <span className="status">{registration.status}</span>
-            </div>
-          ))}
+          <table>
+            <caption className="visually-hidden">
+              Oversigt over tilmeldinger
+            </caption>
+            <thead>
+              <tr className="registration-row registration-labels">
+                <th scope="col">Navn</th>
+                <th scope="col">Event</th>
+                <th scope="col">Dato</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {registrations.map((registration) => (
+                <tr className="registration-row" key={registration.id}>
+                  <th scope="row" data-label="Navn">
+                    {registration.name}
+                  </th>
+                  <td data-label="Event">
+                    <Link
+                      to={`/events/${encodeURIComponent(registration.events?.title.toLowerCase().trim().replace(/\s+/g, "-"))}`}
+                      className="event-title-link"
+                    >
+                      {registration.events?.title}
+                    </Link>
+                  </td>
+                  <td data-label="Dato">
+                    {new Date(registration.events?.date).toLocaleDateString(
+                      "da-DK",
+                    )}
+                  </td>
+                  <td data-label="Status">
+                    <span className="status">{registration.status}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </main>
     </>

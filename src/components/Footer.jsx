@@ -13,12 +13,12 @@ export default function Footer() {
         </div>
         <nav className="footer-links" aria-label="Footer">
           <div className="footer-link-group">
-            <p className="footer-heading">Udforsk</p>
+            <h2 className="footer-heading">Udforsk</h2>
             <Link to="/">Events</Link>
             <Link to="/om">Om Mellemrum</Link>
           </div>
           <div className="footer-link-group">
-            <p className="footer-heading">For arrangører</p>
+            <h2 className="footer-heading">For arrangører</h2>
             <Link to="/tilmeldinger">Se tilmeldinger</Link>
             <a href="mailto:hej@mellemrum.dk">Kontakt os</a>
           </div>
