@@ -4,12 +4,7 @@ import { Lottie } from "lottie-react";
 import successAni from "../assets/animations/check-animation.json";
 import mobilepay from "../assets/images/mobilepay-icon.svg"
 import "./EventPage.css"
-
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const headers = {
-  apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-  "Content-Type": "application/json",
-};
+import { SUPABASE_URL, headers } from "../services/events";
 
 export default function EventPage() {
   const { eventTitle } = useParams();
