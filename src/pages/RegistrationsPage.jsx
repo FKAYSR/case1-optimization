@@ -75,6 +75,7 @@ export default function RegistrationsPage() {
                     <Link
                       to={`/events/${encodeURIComponent(registration.events?.title.toLowerCase().trim().replace(/\s+/g, "-"))}`}
                       className="event-title-link"
+                      title={registration.events?.title}
                     >
                       {registration.events?.title}
                     </Link>

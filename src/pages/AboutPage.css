@@ -25,8 +25,10 @@
 
 .about-page {
   display: grid;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   gap: clamp(5rem, 9vw, 8rem);
-  max-width: none;
   padding: clamp(4rem, 8vw, 8rem) var(--content-edge);
 }
 
@@ -53,7 +55,7 @@
 .about-intro {
   display: grid;
   gap: clamp(3rem, 7vw, 7rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
 }
 
 .about-intro-copy {
@@ -145,7 +147,15 @@
 }
 
 .about-flow-section .about-section-heading h2 {
-  max-width: 14ch;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.about-flow-section,
+.about-flow-section .about-section-heading {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .about-flow-list {
@@ -196,7 +206,7 @@
   background: var(--cream);
   border-radius: 18px;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.75fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.75fr);
   overflow: hidden;
 }
 
@@ -247,13 +257,37 @@
 
 @media (max-width: 900px) {
     .about-intro,
-  .about-city {
-    grid-template-columns: 1fr;
+  .about-city,
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
   }
 
   .about-city figure {
     min-height: 480px;
   }
+
+.about-page > section,
+.about-intro > *,
+.about-audiences,
+.about-audience-split,
+.about-audience-split > article,
+.about-city,
+.about-city > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.about-flow-list {
+  grid-template-columns: 1fr;
+  width: 100%;
+  min-width: 0;
+}
+
+.about-flow-list li {
+  min-width: 0;
+  max-width: 100%;
+}
 }
 
 @media (max-width: 620px) {
