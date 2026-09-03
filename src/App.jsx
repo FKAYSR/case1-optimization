@@ -12,7 +12,11 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const handleScroll = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+
+    return () => cancelAnimationFrame(handleScroll);
   }, [pathname]);
 
   return null;
