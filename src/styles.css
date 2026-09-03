@@ -153,24 +153,7 @@ select:focus {
   font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
 }
 
-
-/* Responsiveness */
-@media (max-width: 620px) {
-  /* Navbar + HomePage */
-  .site-nav,
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .event-grid,
-  .filters,
-  .about-audience-split,
-  .about-flow-list {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Scrolling to top button */
 .scroll-to-top {
   align-items: center;
   background: var(--green);
@@ -192,4 +175,21 @@ select:focus {
 .scroll-to-top:hover {
   background: var(--lime);
   color: var(--green);
+}
+
+/* Responsiveness */
+@media (max-width: 620px) {
+  /* Navbar + HomePage */
+  .site-nav,
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .event-grid,
+  .filters,
+  .about-audience-split,
+  .about-flow-list {
+    grid-template-columns: 1fr;
+  }
 }
