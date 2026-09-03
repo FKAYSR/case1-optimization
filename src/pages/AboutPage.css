@@ -32,15 +32,15 @@
 
 .about-page h2 {
   font-size: clamp(2.6rem, 5vw, 5rem);
-  letter-spacing: -0.06em;
-  line-height: 0.95;
+  letter-spacing: 0em;
+  line-height: 1.05;
   margin: 0;
 }
 
 .about-page h3 {
   font-size: clamp(1.8rem, 3vw, 3rem);
-  letter-spacing: -0.045em;
-  line-height: 1;
+  letter-spacing: 0em;
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -104,8 +104,8 @@
 .about-audience-split .audience-label,
 .about-flow-list span {
   font-size: 0.75rem;
-  font-weight: 850;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -217,7 +217,7 @@
   background: var(--lime);
   bottom: 0;
   color: var(--green);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
   left: 0;
   letter-spacing: 0.08em;

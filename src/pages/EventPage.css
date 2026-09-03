@@ -4,7 +4,7 @@
 
 .back-link {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 2rem;
 }
 
@@ -30,8 +30,8 @@
 
 .event-detail h1 {
   font-size: clamp(3rem, 5vw, 5.5rem);
-  letter-spacing: -0.065em;
-  line-height: 0.95;
+  letter-spacing: 0em;
+  line-height: 1.05;
   margin: 0 0 1.5rem;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .signup-panel form > span {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-top: 0.3rem;

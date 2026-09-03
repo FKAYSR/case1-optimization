@@ -16,7 +16,7 @@
 .brand {
   font-size: 1.6rem;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.1em;
   text-decoration: none;
 }
 
@@ -36,6 +36,7 @@
   padding: 0.55rem 0.85rem;
   text-decoration: none;
   transition: background 160ms ease, color 160ms ease;
+  letter-spacing: -0.001em;
 }
 
 .nav-links a:hover, a.active {
