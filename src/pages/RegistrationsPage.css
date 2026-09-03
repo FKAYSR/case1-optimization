@@ -23,7 +23,7 @@
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1.2fr 1.5fr 0.7fr 0.5fr;
+  grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;
   padding: 1rem 1.2rem;
 }
 
@@ -77,14 +77,18 @@
 }
 
 .event-title-link {
-  align-self: flex-start;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
   background: var(--green);
   border-radius: 999px;
   color: white;
   font-size: 0.88rem;
   font-weight: 700;
-  margin-top: 1rem;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   transition: background 160ms ease, color 160ms ease;
 }
@@ -102,6 +106,7 @@
   font-weight: 700;
   padding: 0.35rem 0.6rem;
   text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 620px) {
@@ -118,26 +123,29 @@
   }
 
   .registration-row {
-    grid-template-columns: 1fr;
+    display: block;
     padding: 1.2rem;
   }
 
   .registration-row td,
   .registration-row th[scope="row"] {
     border: 0;
-    padding: 0.25rem 0 0.25rem 5rem;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    text-align: right;
   }
 
   .registration-row td::before,
   .registration-row th[scope="row"]::before {
     color: #65706c;
-    content: attr(data-label);
     font-size: 0.72rem;
     font-weight: 800;
-    left: 0;
     letter-spacing: 0.08em;
-    position: absolute;
     text-transform: uppercase;
+    text-align: left;
+    text-transform: uppercase;
+    padding-right: 1rem;
   }
 }
