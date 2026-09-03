@@ -27,8 +27,8 @@
 .footer-brand {
   color: white;
   font-size: clamp(2rem, 4vw, 3.6rem);
-  font-weight: 850;
-  letter-spacing: -0.06em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   line-height: 1;
 }
 
@@ -40,7 +40,7 @@
   color: var(--lime);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   margin-bottom: 0.75rem !important;
   text-transform: uppercase;
 }
@@ -76,7 +76,7 @@
 }
 
 .footer-bottom p {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   margin: 0;
   white-space: nowrap;
 }

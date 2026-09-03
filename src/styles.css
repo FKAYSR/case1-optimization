@@ -70,9 +70,9 @@ select:focus {
 
 .eyebrow {
   color: var(--lime);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   margin: 0 0 1rem;
   text-transform: uppercase;
 }
@@ -103,8 +103,8 @@ select:focus {
 .hero h1,
 .page-header h1 {
   font-size: clamp(3.2rem, 8vw, 7.5rem);
-  letter-spacing: -0.075em;
-  line-height: 0.9;
+  letter-spacing: 0em;
+  line-height: 1.05;
   margin: 0;
   max-width: 12ch;
 }
@@ -113,7 +113,7 @@ select:focus {
 .section-heading h2,
 .signup-panel h2 {
   font-size: clamp(2.2rem, 4vw, 4rem);
-  letter-spacing: -0.055em;
+  letter-spacing: 0em;
   line-height: 1;
   margin: 0;
 }
@@ -122,10 +122,10 @@ select:focus {
 .filters label,
 .signup-panel label {
   display: grid;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
   gap: 0.45rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -133,8 +133,8 @@ select:focus {
 .event-category {
   color: #a5412c;
   font-size: 0.72rem;
-  font-weight: 850;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   margin: 0 0 0.7rem;
   text-transform: uppercase;
 }
